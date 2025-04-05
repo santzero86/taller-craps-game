@@ -32,12 +32,17 @@ public class GameController {
         nicknameLabel.setText(player.getNickname());
     }
 
+    private int rollCount = 0;
+
+
     @FXML
     void onActionPlayButton(ActionEvent event) {
         Dice dice1 = new Dice();
         Dice dice2 = new Dice();
 
-        int rollScore = dice1.roll() + dice2.roll();
+        //int rollScore = dice1.roll() + dice2.roll();
+        int diceValue1 = dice1.roll();
+        int diceValue2 = dice2.roll();
 
         this.diceImageView1.setImage(new Image(getClass().getResourceAsStream(
                 dice1.getDiceImagePath()
@@ -45,6 +50,6 @@ public class GameController {
         this.diceImageView2.setImage(new Image(getClass().getResourceAsStream(
                 dice2.getDiceImagePath()
         )));
-        this.rollScoreLabel.setText(String.valueOf(rollScore));
+        this.rollScoreLabel.setText(String.valueOf(diceValue1));
     }
 }

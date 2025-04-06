@@ -1,6 +1,6 @@
 package com.example.crapsgame.models;
 
-public class Dice {
+public class Dice implements IDice {
 
     int value;
 

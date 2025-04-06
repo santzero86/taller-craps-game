@@ -1,6 +1,6 @@
 package com.example.crapsgame.models;
 
-public class Player {
+public class Player implements IPlayer {
 
     private String nickname;
 

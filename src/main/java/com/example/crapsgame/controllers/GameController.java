@@ -175,11 +175,11 @@ public class GameController {
 
         // Display appropriate message based on game result
         if (newWins > previousWins) {
-            this.stateLabel.setText("¡Ganaste la ronda! ¿Seguimos roleando?");
+            this.stateLabel.setText("¡Ganaste la ronda! \n ¿Seguimos roleando?");
             this.rollScore = 0;
             this.rollScoreLabel.setText(String.valueOf(this.rollScore));
         } else if (newLosses > previousLosses) {
-            this.stateLabel.setText("¡Craps! Perdiste esta ronda, ¿seguimos roleando?");
+            this.stateLabel.setText("¡Craps! Perdiste esta ronda \n ¿seguimos roleando?");
         } else if (previousPoint == 0 && newPoint != 0) {
             this.stateLabel.setText("¡Tienes un punto!");
         }

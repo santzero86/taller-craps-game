@@ -11,12 +11,14 @@ public class Game {
     private int point;
     private int wonGames;
     private int lossGames;
+    private int round;
 
 
     public Game() {
         this.point = 0;
         this.wonGames = 0;
         this.lossGames = 0;
+        this.round = 1;
     }
 
 
@@ -29,9 +31,11 @@ public class Game {
         if (this.point == 0) {
             if (shotValue == 7 || shotValue == 11) {
                 this.wonGames++;
+                this.round++;
             }
             else if (shotValue == 2 || shotValue == 3 || shotValue == 12) {
                 this.lossGames++;
+                this.round++;
             }
             else {
                 this.point = shotValue;
@@ -39,12 +43,13 @@ public class Game {
         } else {
             if (shotValue == this.point) {
                 this.wonGames++;
+                this.round++;
+                this.point = 0;
             }
             else if (shotValue == 7) {
-                this.lossGames--;
-            }
-            else {
-                this.point = shotValue;
+                this.lossGames++;
+                this.round++;
+                this.point = 0;
             }
         }
     }
@@ -74,5 +79,13 @@ public class Game {
      */
     public int getPoint() {
         return this.point;
+    }
+
+    /**
+     * Retrieves the current round of the game.
+     * @return the value of the round.
+     */
+    public int getRound() {
+        return round;
     }
 }

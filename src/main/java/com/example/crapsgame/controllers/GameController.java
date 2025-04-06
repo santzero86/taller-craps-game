@@ -36,6 +36,9 @@ public class GameController {
     @FXML
     private ImageView diceImageView1;
 
+    @FXML
+    private Label stateLabel;
+
 
     @FXML
     private ImageView diceImageView2;
@@ -49,6 +52,9 @@ public class GameController {
 
     private int rollScore = 0;
 
+    public void initialize() {
+        this.stateLabel.setText("It's Craps time!");
+    }
 
     public void setPlayer(Player player) {
         this.player = player;
@@ -90,10 +96,32 @@ public class GameController {
 
     void updateLabels() {
         this.rollScoreLabel.setText(String.valueOf(this.rollScore));
+
+        int previousPoint = this.gameState.getPoint();
+        int previousWins = this.gameState.getWonGames();
+        int previousLosses = this.gameState.getLossGames();
+
+        // cuando evaluamos la tirada, los valores de puntos, ganadas, perdidas se actualizan
         this.gameState.evaluateRoll(this.rollScore);
+
         this.winPlace.setText(String.valueOf(this.gameState.getWonGames()));
         this.pointLabel.setText(String.valueOf(this.gameState.getPoint()));
-        this.losePlays.setText((String.valueOf(this.gameState.getLossGames())));
+        this.losePlays.setText(String.valueOf(this.gameState.getLossGames()));
         this.roundLabel.setText(String.valueOf(this.gameState.getRound()));
+
+        int newPoint = this.gameState.getPoint();
+        int newWins = this.gameState.getWonGames();
+        int newLosses = this.gameState.getLossGames();
+
+        // basta con revisar si esos contadores han aumentado o no
+        if (newWins > previousWins) {
+            this.stateLabel.setText("¡Ganaste la ronda! ¿Seguimos roleando?");
+            this.rollScore = 0;
+            this.rollScoreLabel.setText(String.valueOf(this.rollScore));
+        } else if (newLosses > previousLosses) {
+            this.stateLabel.setText("¡Craps! Perdiste esta ronda, ¿seguimos roleando?");
+        } else if (previousPoint == 0 && newPoint != 0) {
+            this.stateLabel.setText("¡Tienes un punto!");
+        }
     }
 }

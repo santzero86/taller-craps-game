@@ -1,6 +1,6 @@
 package com.example.crapsgame.views;
 
-import com.example.crapsgame.HelloApplication;
+import com.example.crapsgame.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,7 +12,7 @@ public class WelcomeView extends Stage {
 
     public WelcomeView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                HelloApplication.class.getResource("welcome-view.fxml")
+                Main.class.getResource("welcome-view.fxml")
         );
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root, 320, 240);

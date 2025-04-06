@@ -114,7 +114,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="roundLabel" prefHeight="26.0" prefWidth="16.0" text="0">
+                        <Label fx:id="roundLabel" prefHeight="30.0" prefWidth="42.0" text="0">
                            <padding>
                               <Insets bottom="10.0" />
                            </padding>

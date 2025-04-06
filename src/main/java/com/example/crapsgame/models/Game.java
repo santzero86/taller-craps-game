@@ -7,7 +7,7 @@ package com.example.crapsgame.models;
  * @author Santiago Guerrero
  * @author Juan Pablo Escamilla
  */
-public class Game {
+public class Game implements IGame {
     private int point;
     private int wonGames;
     private int lossGames;

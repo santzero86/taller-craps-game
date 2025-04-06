@@ -3,15 +3,13 @@ package com.example.crapsgame.controllers;
 import com.example.crapsgame.models.Dice;
 import com.example.crapsgame.models.Game;
 import com.example.crapsgame.models.Player;
+import com.example.crapsgame.views.InstructionsView;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -136,17 +134,12 @@ public class GameController {
      * Triggered when the "Help" button is clicked.
      * Opens a new window with game instructions loaded from the FXML view.
      *
-     * @param event The action event triggered by the button.
      * @throws IOException If the instructions view cannot be loaded.
      */
     @FXML
-    void onActionHelpButton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/crapsgame/instruction-view.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.setTitle("Craps game");
-        stage.setScene(new Scene(root));
-        stage.show();
+    void onActionHelpButton() throws IOException {
+        InstructionsView instructionsView = InstructionsView.getInstance();
+        instructionsView.show();
     }
 
     /**

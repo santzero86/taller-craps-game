@@ -94,6 +94,6 @@ public class GameController {
         this.winPlace.setText(String.valueOf(this.gameState.getWonGames()));
         this.pointLabel.setText(String.valueOf(this.gameState.getPoint()));
         this.losePlays.setText((String.valueOf(this.gameState.getLossGames())));
-        roundLabel.setText("Ronda: " + this.gameState.getRound());
+        this.roundLabel.setText(String.valueOf(this.gameState.getRound()));
     }
 }

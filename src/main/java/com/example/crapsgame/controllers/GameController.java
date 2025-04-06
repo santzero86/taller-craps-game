@@ -144,7 +144,7 @@ public class GameController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/crapsgame/instruction-view.fxml"));
         Parent root = loader.load();
         Stage stage = new Stage();
-        stage.setTitle("My Game");
+        stage.setTitle("Craps game");
         stage.setScene(new Scene(root));
         stage.show();
     }

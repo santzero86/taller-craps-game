@@ -18,7 +18,7 @@ public class GameView extends Stage {
         );
         Scene scene = new Scene(fxmlLoader.load());
         this.controller = fxmlLoader.getController();
-        this.setTitle("Craps Game - Welcome!");
+        this.setTitle("Craps Game");
         this.setScene(scene);
     }
 

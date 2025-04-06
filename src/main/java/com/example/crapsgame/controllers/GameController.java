@@ -95,14 +95,6 @@ public class GameController {
     private int rollScore = 0;
 
     /**
-     * Initializes the game screen.
-     * Called automatically when the FXML file is loaded.
-     */
-    public void initialize() {
-        this.stateLabel.setText("It's Craps time!");
-    }
-
-    /**
      * Sets the player object for this game session.
      *
      * @param player The player to be associated with the game.
@@ -183,13 +175,13 @@ public class GameController {
 
         // Display appropriate message based on game result
         if (newWins > previousWins) {
-            this.stateLabel.setText("You won this round! Keep rolling?");
+            this.stateLabel.setText("¡Ganaste la ronda! ¿Seguimos roleando?");
             this.rollScore = 0;
             this.rollScoreLabel.setText(String.valueOf(this.rollScore));
         } else if (newLosses > previousLosses) {
-            this.stateLabel.setText("Craps! You lost this round. Try again?");
+            this.stateLabel.setText("¡Craps! Perdiste esta ronda, ¿seguimos roleando?");
         } else if (previousPoint == 0 && newPoint != 0) {
-            this.stateLabel.setText("You have a point!");
+            this.stateLabel.setText("¡Tienes un punto!");
         }
     }
 }

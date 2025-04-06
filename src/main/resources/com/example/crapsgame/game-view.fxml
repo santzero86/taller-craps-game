@@ -48,16 +48,20 @@
             </VBox>
             <VBox alignment="CENTER" style="-fx-border-color: black;" HBox.hgrow="ALWAYS">
                <children>
-                  <AnchorPane prefHeight="33.0" prefWidth="340.0">
+                  <Label fx:id="stateLabel" alignment="CENTER" prefHeight="13.0" prefWidth="338.0" text="State Label" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <AnchorPane prefHeight="14.0" prefWidth="340.0">
                      <children>
-                        <Label fx:id="stateLabel" alignment="CENTER" layoutX="-3.0" layoutY="-72.0" prefHeight="52.0" prefWidth="338.0" text="State Label" textFill="RED">
-                           <font>
-                              <Font name="System Bold" size="35.0" />
-                           </font>
-                        </Label>
+                        <Label fx:id="nicknameLabel" layoutX="139.0" layoutY="1.0" prefHeight="17.0" prefWidth="62.0" text="Nickname" />
                      </children>
                   </AnchorPane>
-                  <Label fx:id="nicknameLabel" text="Nickname" />
+                  <AnchorPane prefHeight="14.0" prefWidth="340.0" />
                   <Label text="RESULTADOS" />
                   <GridPane style="-fx-border-color: black;">
                     <columnConstraints>
@@ -97,6 +101,29 @@
                         </Label>
                      </children>
                   </GridPane>
+                  <HBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="340.0">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="79.0" text="RONDA" textAlignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="roundLabel" prefHeight="26.0" prefWidth="16.0" text="0">
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                   <GridPane>
                     <columnConstraints>
                       <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

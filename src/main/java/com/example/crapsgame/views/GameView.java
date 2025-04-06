@@ -1,6 +1,6 @@
 package com.example.crapsgame.views;
 
-import com.example.crapsgame.HelloApplication;
+import com.example.crapsgame.Main;
 import com.example.crapsgame.controllers.GameController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +14,7 @@ public class GameView extends Stage {
 
     public GameView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                HelloApplication.class.getResource("game-view.fxml")
+                Main.class.getResource("game-view.fxml")
         );
         Scene scene = new Scene(fxmlLoader.load());
         this.controller = fxmlLoader.getController();
